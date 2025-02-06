@@ -21,19 +21,20 @@ const Doctors = () => {
 
     return (
         <div className="doctors">
-            <div>
-                {doctors.map((doctor) => (
-                    <Link to={`/doctor/${doctor.id}-${doctor.firstname}-${doctor.lastname}`} key={doctor.id}>
-                        <img src={doctor.image} alt={doctor.firstname} />
-                        <div>
-                            <h2>{doctor.firstname} {doctor.lastname}</h2>
-                            <h2>{doctor.phone}</h2>
+            {doctors.map((doctor) => (
+                <div className="doctor-card" key={doctor.id}>
+                    <Link to={`/doctor/${doctor.id}-${doctor.firstname}-${doctor.lastname}`} className="doctor-link">
+                        <div className="doctor-image-container">
+                            <img src={doctor.image} alt={`${doctor.firstname} ${doctor.lastname}`} className="doctor-image" />
+                        </div>
+                        <div className="info">
+                            <h2 className="doctor-name">{doctor.firstname} {doctor.lastname}</h2>
+                            <p className="doctor-phone">{doctor.phone}</p>
                         </div>
                     </Link>
-                ))}
-            </div>
-        </div>
-        
+                </div>
+            ))}
+        </div> 
     );
 };
 

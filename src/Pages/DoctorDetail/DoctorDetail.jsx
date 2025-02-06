@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 
 const DoctorDetail = () => {
     const [detail, setDetail] = useState([]);
@@ -20,7 +20,11 @@ const DoctorDetail = () => {
         }
     }
     return (
+        
         <div className="doctors">
+            <nav>
+                <NavLink to="/doctors">Retour a la liste</NavLink>
+            </nav>
             <div>
                 <img src={detail.image} alt={detail.firstname} />
                 <div>
