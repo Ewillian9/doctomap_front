@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, NavLink } from 'react-router-dom';
+import './style.css'
 
 const DoctorDetail = () => {
     const [detail, setDetail] = useState([]);
@@ -21,21 +22,20 @@ const DoctorDetail = () => {
     }
     return (
         
-        <div className="doctors">
+        <div className="doctors-detail">
             <nav>
-                <NavLink to="/doctors">Retour a la liste</NavLink>
+                <NavLink to="/doctors">Retour à la liste</NavLink>
             </nav>
-            <div>
+            <div className="doctor-detail">
                 <img src={detail.image} alt={detail.firstname} />
                 <div>
                     <h2>{detail.firstname} {detail.lastname}</h2>
                     <h2>{detail.speciality}</h2>
                     <h2>{detail.phone}</h2>
-                    <h2>{detail.address}, {detail.city}, {detail.zip}</h2>
+                    <p>{detail.address}, {detail.city}, {detail.zip}</p>
                 </div>
             </div>
         </div>
-        
     );
 };
 
